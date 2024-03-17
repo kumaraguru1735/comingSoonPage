@@ -1,29 +1,29 @@
 <!DOCTYPE html>
 <!-- Created By CodingLab - www.codinglabweb.com -->
 <html lang="en" dir="ltr">
-  <head>
-    <meta charset="UTF-8">
-    <title> PolyMind AI Studio Contact </title>
-    <link rel="stylesheet" href="css/contact.css">
-    <!-- Fontawesome CDN Link -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"/>
-     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-     <style>
-      /* Styles for popup */
-      .popup {
-        position: fixed;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        background-color: #5cb85c; /* Green color */
-        color: white;
-        padding: 20px;
-        border-radius: 10px;
-        display: none; /* Initially hidden */
-        z-index: 9999; /* Ensure it appears on top */
-      }
-     </style>
-   </head>
+<head>
+  <meta charset="UTF-8">
+  <title>PolyMind AI Studio Contact</title>
+  <link rel="stylesheet" href="css/contact.css">
+  <!-- Fontawesome CDN Link -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    /* Styles for popup */
+    .popup {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background-color: #5cb85c; /* Green color */
+      color: white;
+      padding: 20px;
+      border-radius: 10px;
+      display: none; /* Initially hidden */
+      z-index: 9999; /* Ensure it appears on top */
+    }
+  </style>
+</head>
 <body>
   <div class="container">
     <div class="content">
@@ -49,19 +49,19 @@
       </div>
       <div class="right-side">
         <div class="topic-text">Send us a message</div>
-        <p>If you have any inquiries, such as account deletion or any other issues related to my tutorial, feel free to send me a message here. It's my pleasure to assist you.</p>
-      <form id="contactForm" action="#">
-        <div class="input-box">
-          <input type="text" placeholder="Enter your email" id="email">
-        </div>
-        <div class="input-box message-box">
-          <textarea placeholder="Enter your message" id="message"></textarea>
-        </div>
-        <div class="button">
-          <input type="button" value="Send Now" id="sendButton">
-        </div>
-      </form>
-    </div>
+        <p>If you have any inquiries, such as account deletion, refund query or any other issues related to my tutorial, feel free to send me a message here. It's our pleasure to assist you.</p>
+        <form id="contactForm" action="#">
+          <div class="input-box">
+            <input type="email" placeholder="Enter your email" id="email">
+          </div>
+          <div class="input-box message-box">
+            <textarea placeholder="Enter your message" id="message"></textarea>
+          </div>
+          <div class="button">
+            <input type="button" value="Send Now" id="sendButton">
+          </div>
+        </form>
+      </div>
     </div>
   </div>
 
@@ -83,7 +83,8 @@
     }
 
     // Function to handle form submission
-    document.getElementById("sendButton").addEventListener("click", function() {
+    document.getElementById("sendButton").addEventListener("click", function(event) {
+      event.preventDefault(); // Prevent default form submission behavior
       var email = document.getElementById("email").value.trim();
       var message = document.getElementById("message").value.trim();
 
@@ -91,8 +92,11 @@
       if (email === "" || message === "") {
         alert("Please fill in all fields");
       } else {
-        // You can add your email sending logic here
-        // For demonstration, we'll just toggle the success popup
+        // Redirect to Gmail with message
+        var subject = encodeURIComponent("Message from PolyMind AI Studio Contact Form");
+        var body = encodeURIComponent("Customer Email: " + email + "\n" + "Message: " + message);
+        window.location.href = "mailto:polymindaistudio@gmail.com?subject=" + subject + "&body=" + body;
+        // Toggle success popup
         togglePopup("successPopup");
       }
     });

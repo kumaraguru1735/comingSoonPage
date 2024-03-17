@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="./favicon.ico">
+    <title>PolyMind AI Studio Legal</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+            background: #c8e8e9;
+        }
+        .container {
+            background-color: #f2f2f2;
+            border-radius: 6px;
+            padding: 12px;
+            margin-bottom: 10px;
+            position: relative;
+            overflow: hidden; /* To contain ripple effect */
+            cursor: pointer; /* Change cursor to pointer */
+        }
+        .container::after {
+            content: '➡️'; /* Unicode character for right arrow */
+            position: absolute;
+            top: 50%;
+            right: 12px;
+            transform: translateY(-50%);
+        }
+        h1 {
+            text-align: center;
+            color: black;
+            background: url(./logo.png) firebrick fixed;
+            background-repeat: repeat;
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-size: 25px;
+            text-align: center;
+            font-weight: bold;
+            text-transform: uppercase;
+            font-family: 'Steelfish Rg', 'helvetica neue', helvetica, arial, sans-serif;
+            font-weight: 800;
+            -webkit-font-smoothing: antialiased;
+        }
+        a {
+            text-decoration: none;
+            color:black;
+        }
+        a:hover {
+            text-decoration: none;
+            color: white;
+        }
+        .container:hover{
+            background-color: black ;
+            a{
+                color: white;
+            }
+        }
+        .logo {
+            display: block;
+            margin: 0 auto;
+            max-width: 200px;
+            height: auto;
+        }
+        .box {
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: #fff; /* White background */
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Shadow effect */
+            height: 90vh;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+    <img src="./logo.png" alt="PolyMind AI Studio" class="logo" />
+    <h1>⚡PolyMind AI Studio ⚡</h1>
+    <h1>Legal</h1>
+    <div class="container" onclick="handleClick('terms-of-service.html')">
+        <a href="terms-of-service.html">Terms of Service</a>
+    </div>
+    <div class="container" onclick="handleClick('privacy-policy.html')">
+        <a href="privacy-policy.html">Privacy Policy</a>
+    </div>
+    <div class="container" onclick="handleClick('community-guidelines.html')">
+        <a href="community-guidelines.html">Community Guidelines</a>
+    </div>
+    <script>
+        function handleClick(url) {
+            // Redirect to the specified URL
+            window.location.href = url;
+        }
+    </script>
+</div>
+</body>
+</html>
